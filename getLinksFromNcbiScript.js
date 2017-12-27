@@ -1,3 +1,7 @@
+// I browsed https://www.ncbi.nlm.nih.gov/gene/?term=trna-cys
+// used script from chrome browser console
+// its parsed html table and builded links to fragments
+
 [...document.getElementById('gene-tabular-docsum').querySelectorAll('tr')]
   .slice(1)
   .map(tr => tr.childNodes[2].textContent)
@@ -19,8 +23,3 @@
   })
   .filter(link => link.length)
   .join('\n');
-
-document
-  .getElementById('viewercontent1')
-  .querySelector('pre')
-  .innerText.replace(/^\s*\n/gm, '');
